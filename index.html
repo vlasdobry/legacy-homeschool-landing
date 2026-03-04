@@ -128,7 +128,7 @@
       display: grid;
       grid-template-columns: 1fr 420px;
       gap: 48px;
-      align-items: center;
+      align-items: start;
       position: relative; z-index: 1;
     }
     .hero-tag {
@@ -259,7 +259,39 @@
     }
     .quiz-note svg { width: 12px; height: 12px; vertical-align: -1px; margin-right: 4px; }
 
-    /* Hero photo (mobile fallback) */
+    /* Hero photo */
+    .hero-photo {
+      margin-top: 8px;
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+    }
+    .hero-photo img {
+      width: 180px;
+      height: 220px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+    .hero-photo-stat {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-sm);
+      border: 2px solid var(--border);
+      text-align: center;
+    }
+    .hero-photo-stat strong {
+      display: block;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.6rem;
+      color: var(--coral);
+    }
+    .hero-photo-stat span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
     .hero-photo-mobile { display: none; }
 
     /* ===== WAVE DIVIDER ===== */
@@ -1047,6 +1079,7 @@
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 32px; }
       .hero-quiz { max-width: 420px; margin: 0 auto; }
+      .hero-photo { display: none; }
       .hero-photo-mobile { display: block; max-width: 300px; margin: 0 auto 24px; }
       .hero-photo-mobile img { width: 100%; border-radius: var(--radius-md); }
       .reality-grid { grid-template-columns: 1fr; }
@@ -1094,7 +1127,14 @@
         <div class="hero-tag">For homeschool families</div>
         <h1>You Chose to Homeschool.<br>Now Let Us Handle <em>the Hard Part</em></h1>
         <p class="hero-sub">Accredited K-12 with certified teachers, structured curriculum, and real diplomas. You stay in control. We do the lesson planning, grading, and paperwork.</p>
-        <!-- Mobile photo -->
+        <div class="hero-photo">
+          <img src="hero-student.jpg" alt="Student studying at home with Legacy Online School" loading="eager">
+          <div class="hero-photo-stat">
+            <strong>4.87</strong>
+            <span>Parent rating</span>
+          </div>
+        </div>
+        <!-- Mobile photo (fallback) -->
         <div class="hero-photo-mobile">
           <img src="hero-student.jpg" alt="Student studying at home with Legacy Online School" loading="eager">
         </div>
