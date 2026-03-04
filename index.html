@@ -7,7 +7,7 @@
   <meta name="description" content="Structured K-12 curriculum with certified teachers. You stay involved, we handle lesson planning, grading, and accreditation. From $149/month.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -18,267 +18,316 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --navy: #1B2A4A;
-      --navy-light: #2A3D66;
-      --gold: #C4943D;
-      --gold-light: #D4A84F;
-      --cream: #FAF7F2;
-      --cream-dark: #F0EBE3;
+      --coral: #FF6B4A;
+      --coral-light: #FF8A6F;
+      --coral-glow: rgba(255, 107, 74, 0.15);
+      --teal: #1A5C5E;
+      --teal-light: #248486;
+      --teal-dark: #0F3D3E;
+      --yellow: #FFD23F;
+      --yellow-light: #FFE17A;
+      --peach: #FFF8F4;
+      --peach-dark: #FFEDE4;
+      --mint: #E8F5F0;
       --white: #FFFFFF;
-      --text: #2D3142;
-      --text-light: #5C6178;
-      --text-muted: #8E92A4;
-      --success: #3A7D5C;
-      --border: #E4E0D8;
-      --warm-bg: #F5F0E8;
-      --red-muted: #B85C4A;
+      --dark: #2A2438;
+      --text: #3D3650;
+      --text-light: #6B6580;
+      --text-muted: #9D96AB;
+      --success: #2EBD6B;
+      --border: #EDE8F2;
+      --shadow-sm: 0 2px 8px rgba(42, 36, 56, 0.06);
+      --shadow-md: 0 8px 30px rgba(42, 36, 56, 0.08);
+      --shadow-lg: 0 16px 50px rgba(42, 36, 56, 0.12);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-xl: 40px;
     }
 
     html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Outfit', sans-serif;
       color: var(--text);
-      background: var(--cream);
+      background: var(--peach);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; font-weight: 400; line-height: 1.2; }
+    h1, h2, h3, h4 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--dark);
+    }
 
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-    .container--narrow { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
     /* ===== NAV ===== */
     .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(27, 42, 74, 0.97);
-      backdrop-filter: blur(12px);
-      padding: 16px 0;
-      transition: box-shadow 0.3s;
+      position: fixed; top: 12px; left: 50%; transform: translateX(-50%);
+      z-index: 100;
+      width: calc(100% - 32px); max-width: 1100px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-xl);
+      padding: 12px 12px 12px 28px;
+      box-shadow: var(--shadow-md);
+      display: flex; align-items: center; justify-content: space-between;
+      transition: box-shadow 0.3s, top 0.3s;
     }
-    .nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
-    .nav .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav.scrolled { box-shadow: var(--shadow-lg); top: 8px; }
     .nav-logo {
-      font-family: 'DM Serif Display', serif;
-      color: var(--white);
-      font-size: 1.25rem;
+      font-family: 'Fredoka', sans-serif;
+      color: var(--teal-dark);
+      font-size: 1.15rem;
+      font-weight: 600;
       text-decoration: none;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
-    .nav-logo span { color: var(--gold); }
+    .nav-logo span { color: var(--coral); }
     .nav-cta {
-      background: var(--gold);
+      background: var(--coral);
       color: var(--white);
-      padding: 10px 24px;
-      border-radius: 6px;
+      padding: 12px 28px;
+      border-radius: var(--radius-xl);
       text-decoration: none;
       font-weight: 600;
       font-size: 0.875rem;
-      transition: background 0.2s, transform 0.2s;
+      transition: all 0.3s;
+      display: inline-flex; align-items: center; gap: 6px;
     }
-    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--coral-light); transform: scale(1.03); box-shadow: 0 4px 20px rgba(255,107,74,0.3); }
 
     /* ===== HERO ===== */
     .hero {
-      background: var(--navy);
-      padding: 130px 0 0;
+      padding: 130px 0 60px;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(180deg, #FFF8F4 0%, #FFEDE4 100%);
     }
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: -40%;
-      right: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(196,148,61,0.08) 0%, transparent 70%);
-      pointer-events: none;
+    .hero-deco-1 {
+      position: absolute; top: 80px; right: -40px;
+      width: 200px; height: 200px;
+      background: var(--yellow-light);
+      border-radius: 50%;
+      opacity: 0.3;
+      filter: blur(40px);
+    }
+    .hero-deco-2 {
+      position: absolute; bottom: 40px; left: -60px;
+      width: 160px; height: 160px;
+      background: var(--coral-light);
+      border-radius: 50%;
+      opacity: 0.2;
+      filter: blur(50px);
     }
     .hero-inner {
       display: grid;
       grid-template-columns: 1fr 420px;
       gap: 48px;
-      align-items: end;
+      align-items: center;
+      position: relative; z-index: 1;
     }
-    .hero-content { padding-bottom: 80px; }
     .hero-tag {
-      display: inline-block;
-      background: rgba(196,148,61,0.15);
-      color: var(--gold);
-      padding: 6px 14px;
-      border-radius: 4px;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--white);
+      border: 2px solid var(--border);
+      color: var(--teal);
+      padding: 8px 20px;
+      border-radius: var(--radius-xl);
       font-size: 0.8rem;
       font-weight: 600;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--success);
+      border-radius: 50%;
     }
     .hero h1 {
-      color: var(--white);
-      font-size: 2.8rem;
-      line-height: 1.15;
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
       margin-bottom: 20px;
+      letter-spacing: -0.02em;
     }
     .hero h1 em {
-      color: var(--gold);
-      font-style: italic;
+      font-style: normal;
+      color: var(--coral);
+      position: relative;
+    }
+    .hero h1 em::after {
+      content: '';
+      position: absolute; bottom: 2px; left: 0; right: 0;
+      height: 8px;
+      background: var(--yellow);
+      opacity: 0.4;
+      border-radius: 4px;
+      z-index: -1;
     }
     .hero-sub {
-      color: rgba(255,255,255,0.7);
-      font-size: 1.05rem;
-      line-height: 1.6;
-      margin-bottom: 28px;
+      color: var(--text-light);
+      font-size: 1.1rem;
       max-width: 520px;
-    }
-    .hero-ctas {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 8px;
-    }
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--gold);
-      color: var(--white);
-      padding: 15px 30px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .hero-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .hero-cta-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.2);
-      color: rgba(255,255,255,0.8);
-      padding: 14px 28px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .hero-cta-secondary:hover {
-      border-color: rgba(255,255,255,0.5);
-      color: var(--white);
-    }
-    .hero-cta-note {
-      display: block;
-      margin-top: 10px;
-      color: rgba(255,255,255,0.4);
-      font-size: 0.78rem;
+      margin-bottom: 36px;
+      line-height: 1.75;
     }
 
-    /* hero photo */
-    .hero-photo {
+    /* Quiz panel */
+    .hero-quiz {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-lg);
       position: relative;
-      align-self: end;
-      z-index: 1;
     }
-    .hero-photo-img {
-      width: 100%;
-      height: 440px;
-      border-radius: 12px 12px 0 0;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      background: var(--navy-light);
+    .hero-quiz::before {
+      content: '';
+      position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px;
+      background: linear-gradient(135deg, var(--coral), var(--yellow), var(--teal-light));
+      border-radius: calc(var(--radius-lg) + 3px);
+      z-index: -1;
+      opacity: 0.5;
     }
-    .hero-photo-badge {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(27,42,74,0.92);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .quiz-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+      text-align: center;
     }
-    .hero-photo-badge-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 0.9rem;
-    }
-    .hero-photo-badge-text {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.3;
-    }
-    .hero-photo-badge-text strong {
-      display: block;
-      color: var(--white);
+    .quiz-subtitle {
       font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 24px;
     }
+    .quiz-grades {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .quiz-grade {
+      background: var(--peach);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .quiz-grade:hover { border-color: var(--coral); background: var(--white); }
+    .quiz-grade.active {
+      background: var(--coral);
+      color: var(--white);
+      border-color: var(--coral);
+      transform: scale(1.04);
+      box-shadow: 0 4px 16px rgba(255,107,74,0.25);
+    }
+    .quiz-grade-label { display: block; font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; font-family: 'Outfit', sans-serif; font-weight: 400; }
+    .quiz-grade.active .quiz-grade-label { color: rgba(255,255,255,0.8); }
+    .quiz-cta {
+      width: 100%;
+      background: var(--teal);
+      color: var(--white);
+      padding: 16px;
+      border-radius: var(--radius-xl);
+      border: none;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .quiz-cta:hover { background: var(--teal-light); transform: scale(1.02); box-shadow: 0 6px 24px rgba(26,92,94,0.25); }
+    .quiz-note {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+    .quiz-note svg { width: 12px; height: 12px; vertical-align: -1px; margin-right: 4px; }
 
-    /* ===== SOCIAL PROOF BAR ===== */
+    /* Hero photo (mobile fallback) */
+    .hero-photo-mobile { display: none; }
+
+    /* ===== WAVE DIVIDER ===== */
+    .wave-divider {
+      width: 100%;
+      line-height: 0;
+      margin-top: -1px;
+    }
+    .wave-divider svg { width: 100%; height: auto; display: block; }
+
+    /* ===== PROOF BAR ===== */
     .proof-bar {
       background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
+      padding: 36px 0;
     }
     .proof-bar-inner {
       display: flex;
       justify-content: center;
-      align-items: center;
       gap: 40px;
       flex-wrap: wrap;
     }
     .proof-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: var(--text-light);
-    }
-    .proof-item strong {
-      color: var(--navy);
-      font-weight: 700;
+      display: flex; align-items: center; gap: 12px;
     }
     .proof-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--cream);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      color: var(--gold);
-      flex-shrink: 0;
+      width: 44px; height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .proof-icon--globe { background: #E8F5F0; }
+    .proof-icon--badge { background: #FFF3E0; }
+    .proof-icon--group { background: #E8EAF6; }
+    .proof-icon--clock { background: #FCE4EC; }
+    .proof-item strong { font-weight: 600; color: var(--dark); font-size: 0.9rem; }
+    .proof-item span { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* ===== SECTION DEFAULTS ===== */
+    .section-label {
+      display: inline-block;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 12px;
+      padding: 6px 16px;
+      background: var(--coral-glow);
+      border-radius: var(--radius-xl);
     }
 
-    /* ===== REALITY SECTION ===== */
+    /* ===== REALITY (Pain/Solution) ===== */
     .reality {
-      padding: 80px 0 40px;
+      padding: 100px 0 80px;
+      background: var(--white);
     }
     .reality h2 {
-      font-size: 2rem;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
       margin-bottom: 12px;
-      color: var(--navy);
+      text-align: center;
     }
     .reality-lead {
+      text-align: center;
       color: var(--text-light);
-      font-size: 1.05rem;
-      margin-bottom: 48px;
-      max-width: 600px;
+      max-width: 540px;
+      margin: 0 auto 48px;
+      font-size: 1rem;
     }
     .reality-grid {
       display: grid;
@@ -286,232 +335,253 @@
       gap: 20px;
     }
     .reality-item {
-      padding: 28px 24px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--white);
+      padding: 32px 28px;
+      border-radius: var(--radius-md);
+      position: relative;
     }
-    .reality-item--pain { border-left: 3px solid var(--red-muted); }
-    .reality-item-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 600;
-      margin-bottom: 12px;
+    .reality-item--pain {
+      background: #FFF0EB;
+      border: 2px solid #FFDDD3;
     }
-    .reality-item--pain .reality-item-label { color: var(--red-muted); }
-    .reality-item--fix .reality-item-label { color: var(--success); }
-    .reality-item--fix { border-left: 3px solid var(--success); }
+    .reality-item--fix {
+      background: var(--mint);
+      border: 2px solid #C8E8DB;
+    }
+    .reality-item-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+    .reality-item--pain .reality-item-icon { background: #FFDDD3; }
+    .reality-item--fix .reality-item-icon { background: #B5DFCA; }
+    .reality-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .reality-item--pain h4 { color: #C4523A; }
+    .reality-item--fix h4 { color: #1A7A4C; }
     .reality-item p {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
       color: var(--text-light);
-      line-height: 1.6;
     }
 
     /* ===== COMPARISON ===== */
     .compare {
-      padding: 40px 0 80px;
+      padding: 80px 0 100px;
+      background: var(--peach);
     }
     .compare h2 {
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: var(--navy);
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 48px;
     }
-    .compare-table {
+    .compare-cards {
       display: grid;
-      grid-template-columns: 240px 1fr 1fr;
-      border: 2px solid var(--navy);
-      border-radius: 10px;
-      overflow: hidden;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .compare-card {
       background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      border: 2px solid var(--border);
+      transition: border-color 0.3s;
     }
-    .compare-header {
-      background: var(--navy);
+    .compare-card--legacy {
+      border-color: var(--coral);
+      position: relative;
+      box-shadow: 0 8px 30px rgba(255,107,74,0.1);
+    }
+    .compare-card--legacy::before {
+      content: 'Recommended';
+      position: absolute; top: -13px; left: 28px;
+      background: var(--coral);
       color: var(--white);
-      padding: 18px 20px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.7rem;
       font-weight: 600;
-      font-size: 0.9rem;
+      padding: 4px 14px;
+      border-radius: var(--radius-xl);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
-    .compare-header--highlight {
-      background: var(--navy-light);
-      color: var(--gold);
+    .compare-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 10px;
     }
-    .compare-cell {
-      padding: 16px 20px;
-      font-size: 0.9rem;
+    .compare-card h3 span { font-size: 1.5rem; }
+    .compare-row {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 0;
       border-bottom: 1px solid var(--border);
-      color: var(--text-light);
-      display: flex;
-      align-items: center;
+      font-size: 0.88rem;
     }
-    .compare-cell--label {
-      font-weight: 600;
-      color: var(--text);
-      background: var(--cream);
+    .compare-row:last-child { border-bottom: none; }
+    .compare-icon {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem;
+      margin-top: 1px;
     }
-    .compare-cell--highlight { background: rgba(196,148,61,0.04); }
-    .compare-cell:nth-last-child(-n+3) { border-bottom: none; }
-    .compare-check { color: var(--success); margin-right: 6px; }
-    .compare-x { color: var(--text-muted); margin-right: 6px; }
+    .compare-icon--yes { background: #D4F5E2; color: #1A7A4C; }
+    .compare-icon--no { background: #FFDDD3; color: #C4523A; }
+    .compare-icon--mid { background: #FFF3E0; color: #B8860B; }
+    .compare-row-text strong { display: block; color: var(--dark); font-weight: 600; }
+    .compare-row-text span { color: var(--text-muted); font-size: 0.8rem; }
 
-    /* ===== INSIDE THE CLASSROOM ===== */
+    /* ===== CLASSROOM ===== */
     .classroom {
-      padding: 80px 0;
-      background: var(--navy);
+      padding: 100px 0 80px;
+      background: var(--teal-dark);
+      position: relative;
+      overflow: hidden;
     }
+    .classroom::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(36,132,134,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 80%, rgba(255,210,63,0.08) 0%, transparent 50%);
+    }
+    .classroom .container { position: relative; z-index: 1; }
     .classroom h2 {
-      font-size: 2rem;
       color: var(--white);
-      margin-bottom: 12px;
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 10px;
     }
     .classroom-lead {
-      color: rgba(255,255,255,0.55);
-      font-size: 1rem;
-      margin-bottom: 40px;
-      max-width: 560px;
-    }
-    .classroom-mock {
-      background: #1a2540;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .classroom-mock-topbar {
-      background: rgba(255,255,255,0.04);
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .classroom-mock-topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .classroom-mock-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-    }
-    .classroom-mock-dot--red { background: #e85d5d; }
-    .classroom-mock-dot--yellow { background: #e8c95d; }
-    .classroom-mock-dot--green { background: #5de87a; }
-    .classroom-mock-title {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.75rem;
-      margin-left: 12px;
-    }
-    .classroom-mock-live {
-      background: rgba(184,92,74,0.3);
-      color: #e88a7a;
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .classroom-mock-body {
-      display: grid;
-      grid-template-columns: 1fr 280px;
-      min-height: 340px;
-    }
-    .classroom-mock-main {
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, rgba(42,61,102,0.5), rgba(27,42,74,0.8));
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 48px;
+      font-size: 1rem;
     }
-    .classroom-mock-board {
-      font-family: 'DM Serif Display', serif;
-      color: rgba(255,255,255,0.7);
-      font-size: 1.3rem;
-      margin-bottom: 8px;
+    .classroom-window {
+      max-width: 860px;
+      margin: 0 auto 40px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
     }
-    .classroom-mock-subject {
-      color: var(--gold);
-      font-size: 0.82rem;
+    .classroom-bar {
+      background: #1E1E2E;
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .classroom-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .classroom-dot:nth-child(1) { background: #FF5F57; }
+    .classroom-dot:nth-child(2) { background: #FFBD2E; }
+    .classroom-dot:nth-child(3) { background: #28CA41; }
+    .classroom-bar-title { margin-left: 12px; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+    .classroom-bar-live {
+      margin-left: auto;
+      font-size: 0.7rem;
+      color: #FF5F57;
       font-weight: 600;
+      display: flex; align-items: center; gap: 4px;
     }
-    .classroom-mock-note {
-      margin-top: 20px;
-      color: rgba(255,255,255,0.25);
-      font-size: 0.72rem;
-      font-style: italic;
+    .classroom-bar-live::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: #FF5F57;
+      border-radius: 50%;
+      animation: pulse-live 1.5s ease infinite;
     }
-    .classroom-mock-sidebar {
+    @keyframes pulse-live {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .classroom-body {
+      background: #15151F;
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      min-height: 320px;
+    }
+    .classroom-main {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 40px;
+      color: white;
+    }
+    .classroom-main-play {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--coral);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(255,107,74,0.3);
+    }
+    .classroom-main-play:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(255,107,74,0.5); }
+    .classroom-main-play svg { width: 24px; height: 24px; fill: white; margin-left: 3px; }
+    .classroom-main h4 { font-size: 1.1rem; margin-bottom: 4px; color: white; }
+    .classroom-main p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    .classroom-sidebar {
       border-left: 1px solid rgba(255,255,255,0.06);
       padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+      background: rgba(255,255,255,0.02);
     }
-    .classroom-mock-sidebar-title {
-      color: rgba(255,255,255,0.35);
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 4px 0 8px;
-    }
-    .classroom-mock-student {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.03);
-    }
-    .classroom-mock-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--white);
-      flex-shrink: 0;
-    }
-    .classroom-mock-student-info {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.3;
-    }
-    .classroom-mock-student-info span {
-      display: block;
+    .classroom-sidebar-title {
       font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       color: rgba(255,255,255,0.3);
+      font-weight: 700;
+      margin-bottom: 12px;
     }
-    .classroom-mock-more {
-      text-align: center;
-      color: rgba(255,255,255,0.25);
-      font-size: 0.72rem;
-      padding: 8px 0;
+    .classroom-student {
+      display: flex; align-items: center; gap: 10px;
+      padding: 7px 0;
     }
-    .classroom-cta-wrap {
-      text-align: center;
-      margin-top: 32px;
+    .classroom-student-avatar {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: white; font-weight: 600;
     }
-    .classroom-cta-wrap .hero-cta { font-size: 0.9rem; padding: 14px 28px; }
+    .classroom-student-name { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+    .classroom-student-flag { font-size: 0.75rem; margin-left: auto; }
+    .classroom-cta-wrap { text-align: center; }
+    .classroom-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--coral);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: var(--radius-xl);
+      text-decoration: none;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .classroom-cta:hover { background: var(--coral-light); transform: scale(1.03); box-shadow: 0 6px 24px rgba(255,107,74,0.3); }
+
+    /* ===== WAVE DIVIDER DARK ===== */
+    .wave-dark { background: var(--teal-dark); }
+    .wave-white { background: var(--white); }
+    .wave-peach { background: var(--peach); }
 
     /* ===== TEACHERS ===== */
     .teachers {
-      padding: 80px 0;
-      background: var(--warm-bg);
+      padding: 100px 0 80px;
+      background: var(--white);
     }
     .teachers h2 {
-      font-size: 2rem;
-      color: var(--navy);
-      margin-bottom: 12px;
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 10px;
     }
     .teachers-lead {
+      text-align: center;
       color: var(--text-light);
-      font-size: 1rem;
-      margin-bottom: 40px;
-      max-width: 520px;
+      margin-bottom: 48px;
     }
     .teachers-grid {
       display: grid;
@@ -519,45 +589,38 @@
       gap: 20px;
     }
     .teacher-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 28px 20px;
       text-align: center;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      background: var(--peach);
+      border-radius: var(--radius-md);
+      padding: 32px 20px 28px;
+      border: 2px solid transparent;
+      transition: all 0.3s;
     }
-    .teacher-card:hover {
-      border-color: var(--gold);
-      box-shadow: 0 4px 16px rgba(196,148,61,0.1);
-    }
+    .teacher-card:hover { border-color: var(--coral); transform: translateY(-4px); box-shadow: var(--shadow-md); }
     .teacher-avatar {
-      width: 72px;
-      height: 72px;
+      width: 72px; height: 72px;
       border-radius: 50%;
       margin: 0 auto 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--white);
-      /* Replace with real teacher photos in production */
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.4rem;
+      color: white;
+      font-weight: 600;
     }
-    .teacher-avatar--1 { background: linear-gradient(135deg, #4a7c9b, #6a9cb8); }
-    .teacher-avatar--2 { background: linear-gradient(135deg, #7a6b9b, #9a8bb8); }
-    .teacher-avatar--3 { background: linear-gradient(135deg, #6b9b7a, #8bb89a); }
-    .teacher-avatar--4 { background: linear-gradient(135deg, #9b7a4a, #b89a6a); }
     .teacher-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.05rem;
-      color: var(--navy);
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--dark);
       margin-bottom: 4px;
     }
     .teacher-subject {
-      font-size: 0.8rem;
-      color: var(--gold);
+      font-size: 0.75rem;
       font-weight: 600;
-      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--coral);
+      margin-bottom: 10px;
     }
     .teacher-meta {
       font-size: 0.78rem;
@@ -565,260 +628,311 @@
       line-height: 1.5;
     }
 
-    /* ===== WHAT YOU GET (Features) ===== */
+    /* ===== FEATURES ===== */
     .features {
-      padding: 80px 0;
+      padding: 80px 0 100px;
+      background: var(--peach);
     }
     .features h2 {
-      font-size: 2rem;
-      margin-bottom: 12px;
-      color: var(--navy);
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 10px;
     }
     .features-lead {
+      text-align: center;
       color: var(--text-light);
-      font-size: 1.05rem;
       margin-bottom: 48px;
-      max-width: 560px;
     }
     .features-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
     .feature-card {
       background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 28px 24px;
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      border: 2px solid var(--border);
+      transition: border-color 0.3s, transform 0.3s;
     }
+    .feature-card:hover { border-color: var(--teal-light); transform: translateY(-2px); }
     .feature-card:first-child {
       grid-row: span 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: var(--navy);
-      border-color: var(--navy);
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--white);
     }
-    .feature-card:first-child h3 { color: var(--gold); }
-    .feature-card:first-child p { color: rgba(255,255,255,0.7); }
-    .feature-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 10px;
-      color: var(--navy);
-    }
-    .feature-card p {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      line-height: 1.6;
-    }
+    .feature-card:first-child h3 { color: var(--white); }
+    .feature-card:first-child p { color: rgba(255,255,255,0.75); }
     .feature-card-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.5rem;
-      color: var(--gold);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--yellow);
       line-height: 1;
       margin-bottom: 12px;
+    }
+    .feature-card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+    .feature-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-light);
     }
 
     /* ===== ACCREDITATION ===== */
     .accreditation {
-      padding: 60px 0;
-      border-bottom: 1px solid var(--border);
-      border-top: 1px solid var(--border);
+      padding: 64px 0;
       background: var(--white);
     }
     .accreditation-inner {
       display: flex;
-      gap: 40px;
       align-items: center;
+      gap: 48px;
+      max-width: 860px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #F5F0FF 0%, #EFF8F6 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px 44px;
+      border: 2px solid var(--border);
     }
     .accreditation-badges {
-      display: flex;
-      gap: 16px;
-      flex-shrink: 0;
+      display: flex; gap: 16px; flex-shrink: 0;
     }
     .accreditation-badge {
-      width: 80px;
-      height: 80px;
-      background: var(--cream);
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.7rem;
+      width: 80px; height: 80px;
+      border-radius: var(--radius-md);
+      background: var(--white);
+      display: flex; align-items: center; justify-content: center;
       text-align: center;
-      color: var(--navy);
-      line-height: 1.2;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1.3;
+      border: 2px solid var(--border);
     }
     .accreditation-text h3 {
-      font-size: 1.3rem;
-      color: var(--navy);
-      margin-bottom: 8px;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
     .accreditation-text p {
+      font-size: 0.88rem;
       color: var(--text-light);
-      font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     /* ===== PRICING ===== */
     .pricing {
-      padding: 80px 0 48px;
+      padding: 100px 0 80px;
+      background: var(--peach);
     }
     .pricing h2 {
-      font-size: 2rem;
-      margin-bottom: 12px;
-      color: var(--navy);
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 10px;
     }
     .pricing-lead {
+      text-align: center;
       color: var(--text-light);
-      font-size: 1.05rem;
       margin-bottom: 48px;
-      max-width: 600px;
     }
     .pricing-cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
-      max-width: 760px;
+      max-width: 780px;
+      margin: 0 auto 32px;
     }
     .pricing-card {
-      border: 2px solid var(--border);
-      border-radius: 10px;
-      padding: 32px 28px;
       background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      border: 2px solid var(--border);
     }
     .pricing-card--featured {
-      border-color: var(--gold);
+      border-color: var(--coral);
       position: relative;
+      box-shadow: 0 8px 30px rgba(255,107,74,0.1);
     }
     .pricing-card--featured::before {
-      content: 'Maine families';
-      position: absolute;
-      top: -12px; left: 20px;
-      background: var(--gold);
-      color: var(--white);
-      font-size: 0.75rem;
+      content: 'With Scholarship';
+      position: absolute; top: -13px; left: 28px;
+      background: var(--yellow);
+      color: var(--dark);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.7rem;
       font-weight: 600;
-      padding: 3px 12px;
-      border-radius: 4px;
+      padding: 4px 14px;
+      border-radius: var(--radius-xl);
+      text-transform: uppercase;
     }
     .pricing-price {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.2rem;
-      color: var(--navy);
-      margin-bottom: 4px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1;
+      margin-bottom: 8px;
     }
     .pricing-price span {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      color: var(--text-muted);
+      font-size: 1rem;
       font-weight: 400;
+      color: var(--text-muted);
     }
     .pricing-desc {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
-    .pricing-list { list-style: none; }
-    .pricing-list li {
       font-size: 0.88rem;
       color: var(--text-light);
-      padding: 6px 0 6px 20px;
-      position: relative;
+      margin-bottom: 24px;
+      line-height: 1.6;
     }
+    .pricing-list {
+      list-style: none;
+    }
+    .pricing-list li {
+      padding: 8px 0;
+      font-size: 0.88rem;
+      color: var(--text);
+      display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .pricing-list li:last-child { border-bottom: none; }
     .pricing-list li::before {
-      content: '\2713';
-      position: absolute;
-      left: 0;
-      color: var(--success);
+      content: '✓';
+      width: 20px; height: 20px; flex-shrink: 0;
+      background: #D4F5E2;
+      color: #1A7A4C;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem;
       font-weight: 700;
+    }
+    .pricing-list a { color: var(--coral); text-decoration: none; font-weight: 500; }
+    .pricing-list a:hover { text-decoration: underline; }
+
+    /* Guarantee */
+    .guarantee {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+      background: var(--mint);
+      border: 2px solid #C8E8DB;
+      border-radius: var(--radius-md);
+      padding: 20px 28px;
+    }
+    .guarantee-shield {
+      width: 48px; height: 48px;
+      flex-shrink: 0;
+      background: var(--success);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .guarantee-text strong {
+      display: block;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      color: var(--dark);
+    }
+    .guarantee-text span {
+      font-size: 0.82rem;
+      color: var(--text-light);
     }
 
     /* ===== TESTIMONIALS ===== */
     .testimonials {
-      padding: 48px 0 80px;
+      padding: 100px 0 80px;
+      background: var(--white);
     }
     .testimonials h2 {
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: var(--navy);
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 48px;
     }
     .testimonial-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
+      max-width: 860px;
+      margin: 0 auto;
     }
     .testimonial {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 28px 24px;
+      background: var(--peach);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      border: 2px solid var(--border);
+      display: flex; flex-direction: column;
     }
     .testimonial-stars {
-      color: var(--gold);
-      font-size: 0.85rem;
+      color: var(--yellow);
+      font-size: 1rem;
       letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-    .testimonial blockquote {
-      font-size: 0.95rem;
-      color: var(--text);
-      line-height: 1.7;
-      font-style: italic;
       margin-bottom: 16px;
     }
+    .testimonial blockquote {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      flex-grow: 1;
+      font-style: italic;
+    }
     .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      display: flex; align-items: center; gap: 12px;
     }
     .testimonial-author-avatar {
-      width: 36px;
-      height: 36px;
+      width: 40px; height: 40px;
       border-radius: 50%;
-      background: var(--cream-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.75rem;
-      color: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 600; font-size: 0.8rem;
+      flex-shrink: 0;
     }
-    .testimonial-author-info cite {
+    .testimonial-author cite {
       font-style: normal;
-      font-size: 0.85rem;
-      color: var(--text);
       font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--dark);
       display: block;
     }
-    .testimonial-author-info span {
-      font-size: 0.75rem;
+    .testimonial-author span {
+      font-size: 0.78rem;
       color: var(--text-muted);
     }
 
     /* ===== FAQ ===== */
     .faq {
-      padding: 80px 0;
-      background: var(--warm-bg);
+      padding: 80px 0 100px;
+      background: var(--peach);
     }
     .faq h2 {
-      font-size: 2rem;
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
       margin-bottom: 40px;
-      color: var(--navy);
     }
-    .faq-list { max-width: 760px; }
+    .faq-list { max-width: 720px; margin: 0 auto; }
     .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      transition: border-color 0.3s;
     }
-    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-item.open { border-color: var(--coral); }
     .faq-q {
-      font-weight: 600;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 500;
       font-size: 1rem;
-      color: var(--navy);
+      color: var(--dark);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -828,127 +942,134 @@
       border: none;
       width: 100%;
       text-align: left;
-      font-family: inherit;
+      padding: 20px 24px;
       line-height: 1.4;
     }
-    .faq-q::after {
-      content: '+';
-      font-size: 1.4rem;
-      color: var(--gold);
-      flex-shrink: 0;
-      transition: transform 0.2s;
+    .faq-q:hover { color: var(--coral); }
+    .faq-toggle {
+      width: 28px; height: 28px; flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--peach);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      color: var(--coral);
+      transition: all 0.3s;
     }
-    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-item.open .faq-toggle { background: var(--coral); color: white; transform: rotate(45deg); }
     .faq-a {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
+      transition: max-height 0.4s ease;
     }
-    .faq-item.open .faq-a {
-      max-height: 300px;
-      padding-top: 12px;
-    }
-    .faq-a p {
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a-inner {
+      padding: 0 24px 20px;
       font-size: 0.9rem;
       color: var(--text-light);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     /* ===== FINAL CTA ===== */
     .final-cta {
-      padding: 80px 0;
-      background: var(--navy);
+      padding: 80px 0 100px;
+      background: var(--teal-dark);
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
+    .final-cta::before {
+      content: '';
+      position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,210,63,0.08) 0%, transparent 60%);
+    }
+    .final-cta .container { position: relative; z-index: 1; }
     .final-cta h2 {
       color: var(--white);
-      font-size: 2.2rem;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
       margin-bottom: 16px;
     }
     .final-cta p {
       color: rgba(255,255,255,0.6);
       font-size: 1rem;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
       max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: auto; margin-right: auto;
     }
-    .final-cta .hero-cta { font-size: 1.05rem; padding: 18px 40px; }
+    .final-cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--coral);
+      color: var(--white);
+      padding: 18px 44px;
+      border-radius: var(--radius-xl);
+      text-decoration: none;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .final-cta-btn:hover { background: var(--coral-light); transform: scale(1.04); box-shadow: 0 8px 30px rgba(255,107,74,0.3); }
     .final-cta-note {
-      margin-top: 12px;
+      margin-top: 14px;
       font-size: 0.78rem;
       color: rgba(255,255,255,0.3);
     }
 
     /* ===== FOOTER ===== */
     .footer {
-      padding: 32px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      background: var(--navy);
+      padding: 28px 0;
+      background: var(--teal-dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
     .footer .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
-    .footer p {
-      color: rgba(255,255,255,0.35);
-      font-size: 0.8rem;
+    .footer p { color: rgba(255,255,255,0.3); font-size: 0.78rem; }
+    .footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.78rem; }
+    .footer a:hover { color: var(--coral); }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .footer a {
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-      font-size: 0.8rem;
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .footer a:hover { color: var(--gold); }
+    /* staggered */
+    .fade-up-d1 { transition-delay: 0.1s; }
+    .fade-up-d2 { transition-delay: 0.2s; }
+    .fade-up-d3 { transition-delay: 0.3s; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 32px; }
-      .hero-content { padding-bottom: 40px; }
-      .hero-photo { display: none; }
-      .hero h1 { font-size: 2.2rem; }
+      .hero-quiz { max-width: 420px; margin: 0 auto; }
+      .hero-photo-mobile { display: block; max-width: 300px; margin: 0 auto 24px; }
+      .hero-photo-mobile img { width: 100%; border-radius: var(--radius-md); }
       .reality-grid { grid-template-columns: 1fr; }
-      .compare-table {
-        grid-template-columns: 1fr;
-      }
-      .compare-header { display: none; }
-      .compare-cell { padding: 12px 20px; }
-      .compare-cell--label {
-        background: var(--navy);
-        color: var(--white);
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-      .teachers-grid { grid-template-columns: 1fr 1fr; }
+      .compare-cards { grid-template-columns: 1fr; }
+      .teachers-grid { grid-template-columns: repeat(2, 1fr); }
       .features-grid { grid-template-columns: 1fr; }
       .feature-card:first-child { grid-row: span 1; }
       .pricing-cards { grid-template-columns: 1fr; }
       .testimonial-grid { grid-template-columns: 1fr; }
       .accreditation-inner { flex-direction: column; text-align: center; }
+      .classroom-body { grid-template-columns: 1fr; }
+      .classroom-sidebar { border-left: none; border-top: 1px solid rgba(255,255,255,0.06); }
       .footer .container { flex-direction: column; gap: 8px; }
-      .classroom-mock-body { grid-template-columns: 1fr; }
-      .classroom-mock-sidebar { flex-direction: row; flex-wrap: wrap; border-left: none; border-top: 1px solid rgba(255,255,255,0.06); }
+      .nav { width: calc(100% - 16px); padding: 10px 10px 10px 20px; }
     }
     @media (max-width: 600px) {
-      .hero { padding: 110px 0 0; }
+      .hero { padding: 110px 0 40px; }
       .hero h1 { font-size: 1.8rem; }
-      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .quiz-grades { grid-template-columns: repeat(2, 1fr); }
       .proof-bar-inner { gap: 20px; }
-      h2 { font-size: 1.6rem !important; }
+      .proof-item span { display: none; }
       .teachers-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ===== FADE ANIMATION ===== */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
+      .nav-cta { padding: 10px 18px; font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -959,35 +1080,54 @@
 
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <div class="container">
-    <a href="https://legacyonlineschool.com" class="nav-logo">Legacy <span>Online School</span></a>
-    <a href="#talk" class="nav-cta cta-button" data-cta="nav">See How It Works</a>
-  </div>
+  <a href="https://legacyonlineschool.com" class="nav-logo">Legacy <span>Online School</span></a>
+  <a href="#talk" class="nav-cta cta-button" data-cta="nav">Book a Free Call</a>
 </nav>
 
-<!-- HERO: child photo + dual CTA -->
+<!-- HERO -->
 <section class="hero">
+  <div class="hero-deco-1"></div>
+  <div class="hero-deco-2"></div>
   <div class="container">
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-tag">For homeschool families</div>
         <h1>You Chose to Homeschool.<br>Now Let Us Handle <em>the Hard Part</em></h1>
         <p class="hero-sub">Accredited K-12 with certified teachers, structured curriculum, and real diplomas. You stay in control. We do the lesson planning, grading, and paperwork.</p>
-        <div class="hero-ctas">
-          <a href="#classroom" class="hero-cta cta-button" data-cta="hero-primary">&#9654; Watch a Sample Class</a>
-          <a href="#talk" class="hero-cta-secondary cta-button" data-cta="hero-secondary">Book a Free Call</a>
+        <!-- Mobile photo -->
+        <div class="hero-photo-mobile">
+          <img src="hero-student.jpg" alt="Student studying at home with Legacy Online School" loading="eager">
         </div>
-        <span class="hero-cta-note">2-minute video. No signup needed.</span>
       </div>
-      <!-- Child photo — replace src with real photo in production -->
-      <div class="hero-photo">
-        <img class="hero-photo-img" src="hero-student.jpg" alt="Student studying at home with Legacy Online School on laptop" loading="eager">
-        <div class="hero-photo-badge">
-          <div class="hero-photo-badge-icon">&#9733;</div>
-          <div class="hero-photo-badge-text">
-            <strong>4.87 / 5 rating</strong>
-            From parent reviews
+      <!-- Quiz Panel -->
+      <div class="hero-quiz">
+        <div class="quiz-title">Find Your Child's Program</div>
+        <div class="quiz-subtitle">Select grade level to see what's available</div>
+        <div class="quiz-grades">
+          <div class="quiz-grade" data-grade="K-2">
+            K-2
+            <span class="quiz-grade-label">Ages 5-7</span>
           </div>
+          <div class="quiz-grade" data-grade="3-5">
+            3-5
+            <span class="quiz-grade-label">Ages 8-10</span>
+          </div>
+          <div class="quiz-grade" data-grade="6-8">
+            6-8
+            <span class="quiz-grade-label">Ages 11-13</span>
+          </div>
+          <div class="quiz-grade" data-grade="9-12">
+            9-12
+            <span class="quiz-grade-label">Ages 14-17</span>
+          </div>
+        </div>
+        <button class="quiz-cta cta-button" data-cta="hero-quiz" id="quizCta">
+          See Available Classes
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <div class="quiz-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          Free consultation. No commitment.
         </div>
       </div>
     </div>
@@ -999,46 +1139,51 @@
   <div class="container">
     <div class="proof-bar-inner">
       <div class="proof-item">
-        <div class="proof-icon">&#127758;</div>
-        <div><strong>30+ countries</strong></div>
+        <div class="proof-icon proof-icon--globe">&#127758;</div>
+        <div><strong>30+ countries</strong> <span>represented</span></div>
       </div>
       <div class="proof-item">
-        <div class="proof-icon">&#127891;</div>
-        <div><strong>WASC + Cognia</strong> accredited</div>
+        <div class="proof-icon proof-icon--badge">&#127891;</div>
+        <div><strong>WASC + Cognia</strong> <span>accredited</span></div>
       </div>
       <div class="proof-item">
-        <div class="proof-icon">&#128101;</div>
-        <div><strong>10-15 students</strong> per class</div>
+        <div class="proof-icon proof-icon--group">&#128101;</div>
+        <div><strong>10-15 students</strong> <span>per class</span></div>
       </div>
       <div class="proof-item">
-        <div class="proof-icon">&#128197;</div>
-        <div><strong>Flexible schedule</strong></div>
+        <div class="proof-icon proof-icon--clock">&#128197;</div>
+        <div><strong>Flexible schedule</strong> <span>your pace</span></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- REALITY -->
+<!-- REALITY (Pain/Solution) -->
 <section class="reality fade-up">
   <div class="container">
-    <h2>The Honest Truth About Homeschooling</h2>
+    <span class="section-label">The honest truth</span>
+    <h2>The Real Cost of DIY Homeschool</h2>
     <p class="reality-lead">You pulled your child out for good reasons. But doing it all yourself has a cost.</p>
     <div class="reality-grid">
       <div class="reality-item reality-item--pain">
-        <div class="reality-item-label">The burnout</div>
-        <p>You spend hours finding materials, planning lessons, checking if your curriculum actually covers what colleges want. Then you teach. Then you grade. Weekends blur into weekdays.</p>
+        <div class="reality-item-icon">&#128531;</div>
+        <h4>The burnout</h4>
+        <p>Hours finding materials, planning lessons, checking if your curriculum covers what colleges want. Then you teach. Then you grade. Weekends blur into weekdays.</p>
       </div>
       <div class="reality-item reality-item--fix">
-        <div class="reality-item-label">What if instead</div>
-        <p>Certified teachers handle instruction and grading. You get a weekly progress report. You choose when your child studies. The curriculum is already accredited — no guesswork.</p>
+        <div class="reality-item-icon">&#10024;</div>
+        <h4>What if instead</h4>
+        <p>Certified teachers handle instruction and grading. You get a weekly progress report. You choose when your child studies. The curriculum is already accredited.</p>
       </div>
       <div class="reality-item reality-item--pain">
-        <div class="reality-item-label">The accreditation worry</div>
+        <div class="reality-item-icon">&#128556;</div>
+        <h4>The accreditation worry</h4>
         <p>Will this diploma count? Will colleges accept it? Every homeschool parent has this thought at 2 AM. Especially as high school gets closer.</p>
       </div>
       <div class="reality-item reality-item--fix">
-        <div class="reality-item-label">Solved</div>
-        <p>Legacy is accredited by WASC and Cognia — the same bodies that accredit traditional schools. The diploma is recognized by universities in the US and internationally.</p>
+        <div class="reality-item-icon">&#9989;</div>
+        <h4>Solved</h4>
+        <p>Legacy is accredited by WASC and Cognia — the same bodies that accredit traditional schools. The diploma is recognized by US and international universities.</p>
       </div>
     </div>
   </div>
@@ -1047,90 +1192,136 @@
 <!-- COMPARISON -->
 <section class="compare fade-up">
   <div class="container">
+    <span class="section-label">Side by side</span>
     <h2>DIY Homeschool vs. Legacy</h2>
-    <div class="compare-table">
-      <div class="compare-header">&nbsp;</div>
-      <div class="compare-header">DIY Homeschool</div>
-      <div class="compare-header compare-header--highlight">Legacy Online School</div>
-      <div class="compare-cell compare-cell--label">Lesson planning</div>
-      <div class="compare-cell">You find and organize everything</div>
-      <div class="compare-cell compare-cell--highlight"><span class="compare-check">&#10003;</span> Done for you</div>
-      <div class="compare-cell compare-cell--label">Teaching</div>
-      <div class="compare-cell">You teach (or find tutors)</div>
-      <div class="compare-cell compare-cell--highlight"><span class="compare-check">&#10003;</span> Certified teachers, live classes</div>
-      <div class="compare-cell compare-cell--label">Grading</div>
-      <div class="compare-cell">You assess your own child</div>
-      <div class="compare-cell compare-cell--highlight"><span class="compare-check">&#10003;</span> Professional assessment</div>
-      <div class="compare-cell compare-cell--label">Accreditation</div>
-      <div class="compare-cell"><span class="compare-x">&mdash;</span> Varies by state</div>
-      <div class="compare-cell compare-cell--highlight"><span class="compare-check">&#10003;</span> WASC + Cognia accredited</div>
-      <div class="compare-cell compare-cell--label">Diploma</div>
-      <div class="compare-cell"><span class="compare-x">&mdash;</span> Parent-issued</div>
-      <div class="compare-cell compare-cell--highlight"><span class="compare-check">&#10003;</span> Recognized by US colleges</div>
-      <div class="compare-cell compare-cell--label">Flexible schedule</div>
-      <div class="compare-cell"><span class="compare-check">&#10003;</span> Full flexibility</div>
-      <div class="compare-cell compare-cell--highlight"><span class="compare-check">&#10003;</span> Study when it works for you</div>
-      <div class="compare-cell compare-cell--label">Socialization</div>
-      <div class="compare-cell">Co-ops, local groups</div>
-      <div class="compare-cell compare-cell--highlight"><span class="compare-check">&#10003;</span> Classmates from 30+ countries</div>
-      <div class="compare-cell compare-cell--label">Cost</div>
-      <div class="compare-cell">$500-2,000/yr (curriculum)</div>
-      <div class="compare-cell compare-cell--highlight">$149/mo ($1,788/yr)</div>
+    <div class="compare-cards">
+      <div class="compare-card">
+        <h3><span>&#128218;</span> DIY Homeschool</h3>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--no">&#10005;</div>
+          <div class="compare-row-text"><strong>Lesson planning</strong><span>You find and organize everything</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--no">&#10005;</div>
+          <div class="compare-row-text"><strong>Teaching</strong><span>You teach (or find tutors)</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--no">&#10005;</div>
+          <div class="compare-row-text"><strong>Grading</strong><span>You assess your own child</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--mid">~</div>
+          <div class="compare-row-text"><strong>Accreditation</strong><span>Varies by state</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--no">&#10005;</div>
+          <div class="compare-row-text"><strong>Diploma</strong><span>Parent-issued</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--yes">&#10003;</div>
+          <div class="compare-row-text"><strong>Flexible schedule</strong><span>Full flexibility</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--mid">~</div>
+          <div class="compare-row-text"><strong>Cost</strong><span>$500-2,000/yr (curriculum)</span></div>
+        </div>
+      </div>
+      <div class="compare-card compare-card--legacy">
+        <h3><span>&#127775;</span> Legacy Online School</h3>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--yes">&#10003;</div>
+          <div class="compare-row-text"><strong>Lesson planning</strong><span>Done for you</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--yes">&#10003;</div>
+          <div class="compare-row-text"><strong>Teaching</strong><span>Certified teachers, live classes</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--yes">&#10003;</div>
+          <div class="compare-row-text"><strong>Grading</strong><span>Professional assessment</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--yes">&#10003;</div>
+          <div class="compare-row-text"><strong>Accreditation</strong><span>WASC + Cognia accredited</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--yes">&#10003;</div>
+          <div class="compare-row-text"><strong>Diploma</strong><span>Recognized by US colleges</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--yes">&#10003;</div>
+          <div class="compare-row-text"><strong>Flexible schedule</strong><span>Study when it works for you</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-icon compare-icon--yes">&#10003;</div>
+          <div class="compare-row-text"><strong>Cost</strong><span>$149/mo ($1,788/yr)</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- INSIDE THE CLASSROOM — platform preview -->
+<!-- CLASSROOM -->
 <section class="classroom" id="classroom">
   <div class="container">
     <div class="fade-up">
-      <h2>Inside a Legacy Classroom</h2>
+      <span class="section-label" style="background:rgba(255,107,74,0.2);">Inside the classroom</span>
+      <h2>See How Your Child Will Learn</h2>
       <p class="classroom-lead">Small groups, live instruction, real interaction. Here's what a typical class looks like.</p>
     </div>
-    <div class="classroom-mock fade-up">
-      <div class="classroom-mock-topbar">
-        <div class="classroom-mock-topbar-left">
-          <div class="classroom-mock-dot classroom-mock-dot--red"></div>
-          <div class="classroom-mock-dot classroom-mock-dot--yellow"></div>
-          <div class="classroom-mock-dot classroom-mock-dot--green"></div>
-          <span class="classroom-mock-title">Legacy Online School &mdash; Live Class</span>
-        </div>
-        <div class="classroom-mock-live">&#9679; Live</div>
+    <div class="classroom-window fade-up">
+      <div class="classroom-bar">
+        <div class="classroom-dot"></div>
+        <div class="classroom-dot"></div>
+        <div class="classroom-dot"></div>
+        <span class="classroom-bar-title">Legacy Online School — Live Class</span>
+        <div class="classroom-bar-live">LIVE</div>
       </div>
-      <div class="classroom-mock-body">
-        <div class="classroom-mock-main">
-          <div class="classroom-mock-board">7th Grade Mathematics</div>
-          <div class="classroom-mock-subject">Mrs. Anderson &mdash; Algebraic Expressions</div>
-          <div class="classroom-mock-note">In production: embedded video of a real class recording</div>
+      <div class="classroom-body">
+        <div class="classroom-main">
+          <div class="classroom-main-play">
+            <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19"/></svg>
+          </div>
+          <h4>7th Grade Mathematics</h4>
+          <p>Mrs. Anderson — Algebraic Expressions</p>
         </div>
-        <div class="classroom-mock-sidebar">
-          <div class="classroom-mock-sidebar-title">Students (12)</div>
-          <div class="classroom-mock-student">
-            <div class="classroom-mock-avatar" style="background:#4a7c9b;">E</div>
-            <div class="classroom-mock-student-info">Emma T. <span>Maine, US</span></div>
+        <div class="classroom-sidebar">
+          <div class="classroom-sidebar-title">Students Online (12)</div>
+          <div class="classroom-student">
+            <div class="classroom-student-avatar" style="background:#4a7c9b;">E</div>
+            <span class="classroom-student-name">Emma T.</span>
+            <span class="classroom-student-flag">&#127482;&#127480;</span>
           </div>
-          <div class="classroom-mock-student">
-            <div class="classroom-mock-avatar" style="background:#7a6b9b;">L</div>
-            <div class="classroom-mock-student-info">Liam K. <span>Dubai, UAE</span></div>
+          <div class="classroom-student">
+            <div class="classroom-student-avatar" style="background:#7a6b9b;">L</div>
+            <span class="classroom-student-name">Liam K.</span>
+            <span class="classroom-student-flag">&#127462;&#127466;</span>
           </div>
-          <div class="classroom-mock-student">
-            <div class="classroom-mock-avatar" style="background:#6b9b7a;">S</div>
-            <div class="classroom-mock-student-info">Sofia R. <span>Madrid, Spain</span></div>
+          <div class="classroom-student">
+            <div class="classroom-student-avatar" style="background:#6b9b7a;">S</div>
+            <span class="classroom-student-name">Sofia R.</span>
+            <span class="classroom-student-flag">&#127466;&#127480;</span>
           </div>
-          <div class="classroom-mock-student">
-            <div class="classroom-mock-avatar" style="background:#9b7a4a;">A</div>
-            <div class="classroom-mock-student-info">Aiden M. <span>Texas, US</span></div>
+          <div class="classroom-student">
+            <div class="classroom-student-avatar" style="background:#9b7a4a;">A</div>
+            <span class="classroom-student-name">Aiden M.</span>
+            <span class="classroom-student-flag">&#127468;&#127463;</span>
           </div>
-          <div class="classroom-mock-student">
-            <div class="classroom-mock-avatar" style="background:#5b8a6b;">M</div>
-            <div class="classroom-mock-student-info">Mia W. <span>London, UK</span></div>
+          <div class="classroom-student">
+            <div class="classroom-student-avatar" style="background:#5b8a6b;">M</div>
+            <span class="classroom-student-name">Mia W.</span>
+            <span class="classroom-student-flag">&#127463;&#127479;</span>
           </div>
-          <div class="classroom-mock-more">+ 7 more students</div>
+          <div class="classroom-student">
+            <div class="classroom-student-avatar" style="background:#8b5b6b;">Y</div>
+            <span class="classroom-student-name">Yuki N.</span>
+            <span class="classroom-student-flag">&#127471;&#127477;</span>
+          </div>
         </div>
       </div>
     </div>
     <div class="classroom-cta-wrap fade-up">
-      <a href="#talk" class="hero-cta cta-button" data-cta="classroom">Book a Live Platform Tour</a>
+      <a href="#talk" class="classroom-cta cta-button" data-cta="classroom">Book a Live Platform Tour</a>
     </div>
   </div>
 </section>
@@ -1138,42 +1329,43 @@
 <!-- TEACHERS -->
 <section class="teachers fade-up">
   <div class="container">
-    <h2>Meet Our Teachers</h2>
+    <span class="section-label">Our team</span>
+    <h2>Meet the Teachers Behind Legacy</h2>
     <p class="teachers-lead">US-certified educators who teach your child by name, not by student ID.</p>
     <div class="teachers-grid">
       <div class="teacher-card">
-        <!-- Replace with real photo: <img src="..." class="teacher-avatar"> -->
-        <div class="teacher-avatar teacher-avatar--1">SA</div>
+        <div class="teacher-avatar" style="background: linear-gradient(135deg, #3A7D5C, #2D6148);">SA</div>
         <div class="teacher-name">Sarah Anderson</div>
         <div class="teacher-subject">Mathematics</div>
-        <div class="teacher-meta">M.Ed., 12 years teaching<br>Previously: Portland Middle School</div>
+        <div class="teacher-meta">M.Ed., 12 years teaching<br>Portland Middle School</div>
       </div>
       <div class="teacher-card">
-        <div class="teacher-avatar teacher-avatar--2">JC</div>
+        <div class="teacher-avatar" style="background: linear-gradient(135deg, #4a7c9b, #3a6080);">JC</div>
         <div class="teacher-name">James Carter</div>
-        <div class="teacher-subject">Science &amp; AP Physics</div>
-        <div class="teacher-meta">Ph.D. Physics, 8 years teaching<br>Previously: Boston Latin School</div>
+        <div class="teacher-subject">Science & AP Physics</div>
+        <div class="teacher-meta">Ph.D. Physics, 8 years<br>Boston Latin School</div>
       </div>
       <div class="teacher-card">
-        <div class="teacher-avatar teacher-avatar--3">MR</div>
+        <div class="teacher-avatar" style="background: linear-gradient(135deg, #C4943D, #A87D2F);">MR</div>
         <div class="teacher-name">Maria Rodriguez</div>
-        <div class="teacher-subject">English &amp; Literature</div>
-        <div class="teacher-meta">M.A. English, 15 years teaching<br>Previously: Miami Dade Schools</div>
+        <div class="teacher-subject">English & Literature</div>
+        <div class="teacher-meta">M.A. English, 15 years<br>Miami Dade Schools</div>
       </div>
       <div class="teacher-card">
-        <div class="teacher-avatar teacher-avatar--4">DK</div>
+        <div class="teacher-avatar" style="background: linear-gradient(135deg, #7a6b9b, #5F5480);">DK</div>
         <div class="teacher-name">David Kim</div>
-        <div class="teacher-subject">History &amp; Social Studies</div>
-        <div class="teacher-meta">M.A. History, 10 years teaching<br>Previously: San Francisco USD</div>
+        <div class="teacher-subject">History & Social Studies</div>
+        <div class="teacher-meta">M.A. History, 10 years<br>San Francisco USD</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section class="features fade-up" style="background: var(--cream);">
+<section class="features fade-up">
   <div class="container">
-    <h2>What Your Family Gets</h2>
+    <span class="section-label">What you get</span>
+    <h2>Everything Your Family Needs</h2>
     <p class="features-lead">Everything a traditional school provides, minus the things you left it for.</p>
     <div class="features-grid">
       <div class="feature-card">
@@ -1182,20 +1374,24 @@
         <p>Your child learns alongside students from the US, Europe, Asia, and the Middle East. Real diversity, not a textbook page about it.</p>
       </div>
       <div class="feature-card">
+        <div class="feature-card-icon">&#128218;</div>
         <h3>K-12, All Subjects</h3>
-        <p>Math, science, English, social studies, electives, AP courses. One school from kindergarten through graduation. No switching providers every year.</p>
+        <p>Math, science, English, social studies, electives, AP courses. One school from kindergarten through graduation.</p>
       </div>
       <div class="feature-card">
+        <div class="feature-card-icon">&#128101;</div>
         <h3>Small Groups</h3>
-        <p>Classes of 10-15 students, not 30. Your child gets noticed. Teachers know names, not just student IDs.</p>
+        <p>Classes of 10-15 students. Your child gets noticed. Teachers know names, not just student IDs.</p>
       </div>
       <div class="feature-card">
+        <div class="feature-card-icon">&#128200;</div>
         <h3>Parent Dashboard</h3>
-        <p>See grades, attendance, teacher notes in one place. Weekly updates, not "so what did you learn today?" guessing.</p>
+        <p>See grades, attendance, teacher notes in one place. Weekly updates, not guessing.</p>
       </div>
       <div class="feature-card">
+        <div class="feature-card-icon">&#9200;</div>
         <h3>Your Schedule, Not Ours</h3>
-        <p>Live classes are recorded. Travel, appointments, different time zones — it all works. Some families do school at 6 AM, some at 6 PM.</p>
+        <p>Live classes are recorded. Travel, appointments, different time zones — it all works.</p>
       </div>
     </div>
   </div>
@@ -1211,7 +1407,7 @@
       </div>
       <div class="accreditation-text">
         <h3>The Diploma Question, Answered</h3>
-        <p>Legacy is accredited by WASC (Western Association of Schools and Colleges) and Cognia — the same organizations that accredit traditional brick-and-mortar schools. Our graduates have been accepted to universities across the US and internationally. The transcript says "accredited school," not "homeschool."</p>
+        <p>Legacy is accredited by WASC and Cognia — the same organizations that accredit traditional brick-and-mortar schools. Our graduates have been accepted to universities across the US and internationally. The transcript says "accredited school," not "homeschool."</p>
       </div>
     </div>
   </div>
@@ -1220,6 +1416,7 @@
 <!-- PRICING -->
 <section class="pricing fade-up">
   <div class="container">
+    <span class="section-label">Pricing</span>
     <h2>Straightforward Pricing</h2>
     <p class="pricing-lead">One monthly fee. No hidden costs for textbooks, platforms, or materials.</p>
     <div class="pricing-cards">
@@ -1227,7 +1424,7 @@
         <div class="pricing-price">$149 <span>/month</span></div>
         <p class="pricing-desc">Full-time enrollment. All subjects, live classes, certified teachers, accredited diploma.</p>
         <ul class="pricing-list">
-          <li>WASC &amp; Cognia accredited curriculum</li>
+          <li>WASC & Cognia accredited curriculum</li>
           <li>Live classes with certified teachers</li>
           <li>All textbooks and materials included</li>
           <li>Parent dashboard with progress tracking</li>
@@ -1235,15 +1432,22 @@
         </ul>
       </div>
       <div class="pricing-card pricing-card--featured">
-        <div class="pricing-price">~$75 <span>/month after MCSF</span></div>
+        <div class="pricing-price">~$75 <span>/mo after MCSF</span></div>
         <p class="pricing-desc">If your family qualifies for Maine Children's Scholarship Fund, the $900/year award covers roughly half the tuition.</p>
         <ul class="pricing-list">
           <li>Everything in standard enrollment</li>
           <li>MCSF covers up to $900/year</li>
           <li>Your out-of-pocket: ~$888/year</li>
           <li>Application period: January-April</li>
-          <li><a href="https://vlasdobry.github.io/legacy-mcsf-landing/" style="color:var(--gold)">Learn about MCSF scholarship &rarr;</a></li>
+          <li><a href="https://vlasdobry.github.io/legacy-mcsf-landing/">Learn about MCSF scholarship &rarr;</a></li>
         </ul>
+      </div>
+    </div>
+    <div class="guarantee">
+      <div class="guarantee-shield">&#128737;</div>
+      <div class="guarantee-text">
+        <strong>30-Day Money-Back Guarantee</strong>
+        <span>Not the right fit? Full refund within the first 30 days, no questions asked.</span>
       </div>
     </div>
   </div>
@@ -1252,14 +1456,15 @@
 <!-- TESTIMONIALS -->
 <section class="testimonials fade-up">
   <div class="container">
+    <span class="section-label">Parent stories</span>
     <h2>From Families Who Made the Switch</h2>
     <div class="testimonial-grid">
       <div class="testimonial">
         <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <blockquote>"I homeschooled for two years. I loved the control but hated the constant planning. Legacy gave me back my evenings. My daughter still learns at home — she just has real teachers now."</blockquote>
         <div class="testimonial-author">
-          <div class="testimonial-author-avatar">KL</div>
-          <div class="testimonial-author-info">
+          <div class="testimonial-author-avatar" style="background:linear-gradient(135deg,#3A7D5C,#2D6148);">KL</div>
+          <div>
             <cite>Karen L.</cite>
             <span>Parent of a 7th grader, Maine</span>
           </div>
@@ -1269,8 +1474,8 @@
         <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <blockquote>"The accreditation was the deciding factor. I couldn't guarantee that my homeschool transcript would get her into the colleges she wanted. With Legacy, that worry is gone."</blockquote>
         <div class="testimonial-author">
-          <div class="testimonial-author-avatar">DP</div>
-          <div class="testimonial-author-info">
+          <div class="testimonial-author-avatar" style="background:linear-gradient(135deg,#7a6b9b,#5F5480);">DP</div>
+          <div>
             <cite>Diana P.</cite>
             <span>Parent of a 10th grader, Texas</span>
           </div>
@@ -1283,31 +1488,32 @@
 <!-- FAQ -->
 <section class="faq">
   <div class="container">
+    <span class="section-label">FAQ</span>
     <h2>Common Questions</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-q">Is this still homeschooling?</button>
-        <div class="faq-a"><p>Your child learns from home on a flexible schedule. The difference: certified teachers run the instruction, and the program is formally accredited. Many families see it as "homeschool with professional support."</p></div>
+        <button class="faq-q">Is this still homeschooling? <span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Your child learns from home on a flexible schedule. The difference: certified teachers run the instruction, and the program is formally accredited. Many families see it as "homeschool with professional support."</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Can I enroll mid-year?</button>
-        <div class="faq-a"><p>Yes. Legacy accepts students any time of year. We'll assess where your child is and place them at the right level. No waiting for September.</p></div>
+        <button class="faq-q">Can I enroll mid-year? <span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Legacy accepts students any time of year. We'll assess where your child is and place them at the right level. No waiting for September.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">What about socialization?</button>
-        <div class="faq-a"><p>Students interact in live classes with peers from 30+ countries. There are group projects, discussions, and virtual clubs. Plus, your child still has time for local activities, sports, and co-ops.</p></div>
+        <button class="faq-q">What about socialization? <span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Students interact in live classes with peers from 30+ countries. There are group projects, discussions, and virtual clubs. Plus, your child still has time for local activities, sports, and co-ops.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">How does the MCSF scholarship work?</button>
-        <div class="faq-a"><p>The Maine Children's Scholarship Fund provides up to $900/year for families who qualify by income. Applications are open January through April. Legacy is an eligible school. The scholarship covers roughly 50% of annual tuition.</p></div>
+        <button class="faq-q">How does the MCSF scholarship work? <span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">The Maine Children's Scholarship Fund provides up to $900/year for families who qualify by income. Applications are open January through April. Legacy is an eligible school. The scholarship covers roughly 50% of annual tuition.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">What if my child is ahead or behind grade level?</button>
-        <div class="faq-a"><p>We assess each student individually. If your 5th grader does 7th-grade math, we place them there. If they need support in reading, we meet them where they are. Flexible pacing is one of the main reasons families choose us.</p></div>
+        <button class="faq-q">What if my child is ahead or behind grade level? <span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">We assess each student individually. If your 5th grader does 7th-grade math, we place them there. If they need support in reading, we meet them where they are. Flexible pacing is one of the main reasons families choose us.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Do colleges recognize this diploma?</button>
-        <div class="faq-a"><p>Yes. Legacy is accredited by WASC and Cognia. Our transcripts and diplomas are accepted by universities across the US and internationally. We provide the same documentation as any traditional accredited school.</p></div>
+        <button class="faq-q">Do colleges recognize this diploma? <span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Legacy is accredited by WASC and Cognia. Our transcripts and diplomas are accepted by universities across the US and internationally. We provide the same documentation as any traditional accredited school.</div></div>
       </div>
     </div>
   </div>
@@ -1318,7 +1524,7 @@
   <div class="container">
     <h2>See If Legacy Fits Your Family</h2>
     <p>15-minute call with an enrollment advisor. Ask anything. No pressure, no sales pitch.</p>
-    <a href="https://legacyonlineschool.com/consultation" class="hero-cta cta-button" data-cta="final">Book a Free Call</a>
+    <a href="https://legacyonlineschool.com/consultation" class="final-cta-btn cta-button" data-cta="final">Book a Free Call</a>
     <div class="final-cta-note">Or email admissions@legacyonlineschool.com</div>
   </div>
 </section>
@@ -1326,16 +1532,35 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <p>&copy; 2026 Legacy Online School. WASC &amp; Cognia Accredited.</p>
+    <p>&copy; 2026 Legacy Online School. WASC & Cognia Accredited.</p>
     <a href="https://legacyonlineschool.com">legacyonlineschool.com</a>
   </div>
 </footer>
 
 <script>
-  // Nav scroll effect
+  // Nav scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Quiz grade selection
+  document.querySelectorAll('.quiz-grade').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.quiz-grade').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Quiz CTA → scroll to #talk
+  document.getElementById('quizCta').addEventListener('click', () => {
+    const grade = document.querySelector('.quiz-grade.active');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'quiz_submit',
+      selected_grade: grade ? grade.dataset.grade : 'none'
+    });
+    document.getElementById('talk').scrollIntoView({ behavior: 'smooth' });
   });
 
   // FAQ accordion
