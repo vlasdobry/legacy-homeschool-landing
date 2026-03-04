@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homeschool Without the Burnout | Legacy Online School — Accredited K-12</title>
+  <meta name="description" content="Structured K-12 curriculum with certified teachers. You stay involved, we handle lesson planning, grading, and accreditation. From $149/month.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1B2A4A;
+      --navy-light: #2A3D66;
+      --gold: #C4943D;
+      --gold-light: #D4A84F;
+      --cream: #FAF7F2;
+      --cream-dark: #F0EBE3;
+      --white: #FFFFFF;
+      --text: #2D3142;
+      --text-light: #5C6178;
+      --text-muted: #8E92A4;
+      --success: #3A7D5C;
+      --border: #E4E0D8;
+      --warm-bg: #F5F0E8;
+      --red-muted: #B85C4A;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; font-weight: 400; line-height: 1.2; }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .container--narrow { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(27, 42, 74, 0.97);
+      backdrop-filter: blur(12px);
+      padding: 16px 0;
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+    .nav .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      color: var(--white);
+      font-size: 1.25rem;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--navy);
+      padding: 130px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(196,148,61,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(196,148,61,0.15);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      color: var(--white);
+      font-size: 2.8rem;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .hero-cta-note {
+      display: block;
+      margin-top: 10px;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.8rem;
+    }
+
+    /* hero sidebar card */
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 28px 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-card-title {
+      font-family: 'DM Serif Display', serif;
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .hero-card-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .hero-card-item:last-child { margin-bottom: 0; }
+    .hero-card-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: rgba(196,148,61,0.15);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 0.85rem;
+      margin-top: 1px;
+    }
+
+    /* ===== REALITY SECTION ===== */
+    .reality {
+      padding: 80px 0 40px;
+    }
+    .reality h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+    .reality-lead {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      margin-bottom: 48px;
+      max-width: 600px;
+    }
+    .reality-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .reality-item {
+      padding: 28px 24px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+    .reality-item--pain {
+      border-left: 3px solid var(--red-muted);
+    }
+    .reality-item-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .reality-item--pain .reality-item-label { color: var(--red-muted); }
+    .reality-item--fix .reality-item-label { color: var(--success); }
+    .reality-item--fix {
+      border-left: 3px solid var(--success);
+    }
+    .reality-item p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ===== COMPARISON ===== */
+    .compare {
+      padding: 40px 0 80px;
+    }
+    .compare h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: var(--navy);
+    }
+    .compare-table {
+      display: grid;
+      grid-template-columns: 240px 1fr 1fr;
+      border: 2px solid var(--navy);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .compare-header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 18px 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .compare-header--highlight {
+      background: var(--navy-light);
+      color: var(--gold);
+    }
+    .compare-cell {
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+    }
+    .compare-cell--label {
+      font-weight: 600;
+      color: var(--text);
+      background: var(--cream);
+    }
+    .compare-cell--highlight {
+      background: rgba(196,148,61,0.04);
+    }
+    .compare-cell:nth-last-child(-n+3) {
+      border-bottom: none;
+    }
+    .compare-check { color: var(--success); margin-right: 6px; }
+    .compare-x { color: var(--text-muted); margin-right: 6px; }
+
+    /* ===== WHAT YOU GET ===== */
+    .features {
+      padding: 80px 0;
+      background: var(--warm-bg);
+    }
+    .features h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+    .features-lead {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      margin-bottom: 48px;
+      max-width: 560px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 24px;
+    }
+    .feature-card:first-child {
+      grid-row: span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+    .feature-card:first-child h3 { color: var(--gold); }
+    .feature-card:first-child p { color: rgba(255,255,255,0.7); }
+    .feature-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    .feature-card-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    /* ===== ACCREDITATION ===== */
+    .accreditation {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .accreditation-inner {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+    .accreditation-badges {
+      display: flex;
+      gap: 24px;
+      flex-shrink: 0;
+    }
+    .accreditation-badge {
+      width: 80px;
+      height: 80px;
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-align: center;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .accreditation-text h3 {
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .accreditation-text p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ===== PRICING ===== */
+    .pricing {
+      padding: 80px 0 48px;
+    }
+    .pricing h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+    .pricing-lead {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      margin-bottom: 48px;
+      max-width: 600px;
+    }
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 760px;
+    }
+    .pricing-card {
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 32px 28px;
+      background: var(--white);
+    }
+    .pricing-card--featured {
+      border-color: var(--gold);
+      position: relative;
+    }
+    .pricing-card--featured::before {
+      content: 'Maine families';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 12px;
+      border-radius: 4px;
+    }
+    .pricing-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .pricing-price span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    .pricing-desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .pricing-list {
+      list-style: none;
+    }
+    .pricing-list li {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      padding: 6px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .pricing-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      padding: 48px 0 80px;
+    }
+    .testimonials h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: var(--navy);
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .testimonial {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 24px;
+    }
+    .testimonial blockquote {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    .testimonial cite {
+      font-style: normal;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      padding: 80px 0;
+      background: var(--warm-bg);
+    }
+    .faq h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: var(--navy);
+    }
+    .faq-list {
+      max-width: 760px;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-q::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-q::after {
+      transform: rotate(45deg);
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding-top: 12px;
+    }
+    .faq-a p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      padding: 80px 0;
+      background: var(--navy);
+      text-align: center;
+    }
+    .final-cta h2 {
+      color: var(--white);
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+    .final-cta p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .final-cta .hero-cta { font-size: 1.05rem; padding: 18px 40px; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 32px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: var(--navy);
+    }
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer p {
+      color: rgba(255,255,255,0.35);
+      font-size: 0.8rem;
+    }
+    .footer a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.8rem;
+    }
+    .footer a:hover { color: var(--gold); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-card { max-width: 400px; }
+      .hero h1 { font-size: 2.2rem; }
+      .reality-grid { grid-template-columns: 1fr; }
+      .compare-table {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .compare-header { display: none; }
+      .compare-cell { padding: 12px 20px; }
+      .compare-cell--label {
+        background: var(--navy);
+        color: var(--white);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .features-grid { grid-template-columns: 1fr; }
+      .feature-card:first-child { grid-row: span 1; }
+      .pricing-cards { grid-template-columns: 1fr; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .accreditation-inner { flex-direction: column; text-align: center; }
+      .footer .container { flex-direction: column; gap: 8px; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 110px 0 60px; }
+      .hero h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.6rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="https://legacyonlineschool.com" class="nav-logo">Legacy <span>Online School</span></a>
+    <a href="#talk" class="nav-cta cta-button">Book a Free Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">For homeschool families</div>
+        <h1>You Chose to Homeschool.<br>Now Let Us Handle <em>the Hard Part</em></h1>
+        <p class="hero-sub">Accredited K-12 online school with certified teachers, structured curriculum, and real diplomas. You stay in control. We do the lesson planning, grading, and paperwork.</p>
+        <a href="#talk" class="hero-cta cta-button">See How It Works</a>
+        <span class="hero-cta-note">Free 15-minute call. No commitment.</span>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">What changes when you switch</div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">→</div>
+          <div>No more searching for curriculum every semester. WASC-accredited program, ready to go.</div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">→</div>
+          <div>Certified teachers run the classes. You supervise, not teach.</div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">→</div>
+          <div>Recognized diploma. No questions from colleges about "was this real school?"</div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">→</div>
+          <div>Flexible schedule stays. Your kid, your pace.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REALITY -->
+<section class="reality">
+  <div class="container">
+    <h2>The Honest Truth About Homeschooling</h2>
+    <p class="reality-lead">You pulled your child out for good reasons. But doing it all yourself has a cost.</p>
+    <div class="reality-grid">
+      <div class="reality-item reality-item--pain">
+        <div class="reality-item-label">The burnout</div>
+        <p>You spend hours finding materials, planning lessons, checking if your curriculum actually covers what colleges want. Then you teach. Then you grade. Weekends blur into weekdays.</p>
+      </div>
+      <div class="reality-item reality-item--fix">
+        <div class="reality-item-label">What if instead</div>
+        <p>Certified teachers handle instruction and grading. You get a weekly progress report. You choose when your child studies. The curriculum is already accredited — no guesswork.</p>
+      </div>
+      <div class="reality-item reality-item--pain">
+        <div class="reality-item-label">The accreditation worry</div>
+        <p>Will this diploma count? Will colleges accept it? Every homeschool parent has this thought at 2 AM. Especially as high school gets closer.</p>
+      </div>
+      <div class="reality-item reality-item--fix">
+        <div class="reality-item-label">Solved</div>
+        <p>Legacy is accredited by WASC and Cognia — the same bodies that accredit traditional schools. The diploma is recognized by universities in the US and internationally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare">
+  <div class="container">
+    <h2>DIY Homeschool vs. Legacy</h2>
+    <div class="compare-table">
+      <div class="compare-header">&nbsp;</div>
+      <div class="compare-header">DIY Homeschool</div>
+      <div class="compare-header compare-header--highlight">Legacy Online School</div>
+
+      <div class="compare-cell compare-cell--label">Lesson planning</div>
+      <div class="compare-cell">You find and organize everything</div>
+      <div class="compare-cell compare-cell--highlight"><span class="compare-check">✓</span> Done for you</div>
+
+      <div class="compare-cell compare-cell--label">Teaching</div>
+      <div class="compare-cell">You teach (or find tutors)</div>
+      <div class="compare-cell compare-cell--highlight"><span class="compare-check">✓</span> Certified teachers, live classes</div>
+
+      <div class="compare-cell compare-cell--label">Grading</div>
+      <div class="compare-cell">You assess your own child</div>
+      <div class="compare-cell compare-cell--highlight"><span class="compare-check">✓</span> Professional assessment</div>
+
+      <div class="compare-cell compare-cell--label">Accreditation</div>
+      <div class="compare-cell"><span class="compare-x">—</span> Varies by state</div>
+      <div class="compare-cell compare-cell--highlight"><span class="compare-check">✓</span> WASC + Cognia accredited</div>
+
+      <div class="compare-cell compare-cell--label">Diploma</div>
+      <div class="compare-cell"><span class="compare-x">—</span> Parent-issued</div>
+      <div class="compare-cell compare-cell--highlight"><span class="compare-check">✓</span> Recognized by US colleges</div>
+
+      <div class="compare-cell compare-cell--label">Flexible schedule</div>
+      <div class="compare-cell"><span class="compare-check">✓</span> Full flexibility</div>
+      <div class="compare-cell compare-cell--highlight"><span class="compare-check">✓</span> Study when it works for you</div>
+
+      <div class="compare-cell compare-cell--label">Socialization</div>
+      <div class="compare-cell">Co-ops, local groups</div>
+      <div class="compare-cell compare-cell--highlight"><span class="compare-check">✓</span> Classmates from 30+ countries</div>
+
+      <div class="compare-cell compare-cell--label">Cost</div>
+      <div class="compare-cell">$500–2,000/yr (curriculum)</div>
+      <div class="compare-cell compare-cell--highlight">$149/mo ($1,788/yr)</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="container">
+    <h2>What Your Family Gets</h2>
+    <p class="features-lead">Everything a traditional school provides, minus the things you left it for.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card-num">30+</div>
+        <h3>Countries Represented</h3>
+        <p>Your child learns alongside students from the US, Europe, Asia, and the Middle East. Real diversity, not a textbook page about it.</p>
+      </div>
+      <div class="feature-card">
+        <h3>K-12, All Subjects</h3>
+        <p>Math, science, English, social studies, electives, AP courses. One school from kindergarten through graduation. No switching providers every year.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Small Groups</h3>
+        <p>Classes of 10-15 students, not 30. Your child gets noticed. Teachers know names, not just student IDs.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Parent Dashboard</h3>
+        <p>See grades, attendance, teacher notes in one place. Weekly updates, not "so what did you learn today?" guessing.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Your Schedule, Not Ours</h3>
+        <p>Live classes are recorded. Travel, appointments, different time zones — it all works. Some families do school at 6 AM, some at 6 PM.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATION -->
+<section class="accreditation">
+  <div class="container">
+    <div class="accreditation-inner">
+      <div class="accreditation-badges">
+        <div class="accreditation-badge">WASC<br>Accredited</div>
+        <div class="accreditation-badge">Cognia<br>Accredited</div>
+      </div>
+      <div class="accreditation-text">
+        <h3>The Diploma Question, Answered</h3>
+        <p>Legacy is accredited by WASC (Western Association of Schools and Colleges) and Cognia — the same organizations that accredit traditional brick-and-mortar schools. Our graduates have been accepted to universities across the US and internationally. The transcript says "accredited school," not "homeschool."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="container">
+    <h2>Straightforward Pricing</h2>
+    <p class="pricing-lead">One monthly fee. No hidden costs for textbooks, platforms, or materials.</p>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <div class="pricing-price">$149 <span>/month</span></div>
+        <p class="pricing-desc">Full-time enrollment. All subjects, live classes, certified teachers, accredited diploma.</p>
+        <ul class="pricing-list">
+          <li>WASC &amp; Cognia accredited curriculum</li>
+          <li>Live classes with certified teachers</li>
+          <li>All textbooks and materials included</li>
+          <li>Parent dashboard with progress tracking</li>
+          <li>College-ready transcript and diploma</li>
+        </ul>
+      </div>
+      <div class="pricing-card pricing-card--featured">
+        <div class="pricing-price">~$75 <span>/month after MCSF</span></div>
+        <p class="pricing-desc">If your family qualifies for Maine Children's Scholarship Fund, the $900/year award covers roughly half the tuition.</p>
+        <ul class="pricing-list">
+          <li>Everything in standard enrollment</li>
+          <li>MCSF covers up to $900/year</li>
+          <li>Your out-of-pocket: ~$888/year</li>
+          <li>Application period: January–April</li>
+          <li><a href="https://vlasdobry.github.io/legacy-mcsf-landing/" style="color:var(--gold)">Learn about MCSF scholarship →</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <h2>From Families Who Made the Switch</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <blockquote>"I homeschooled for two years. I loved the control but hated the constant planning. Legacy gave me back my evenings. My daughter still learns at home — she just has real teachers now."</blockquote>
+        <cite>Parent of a 7th grader, Maine</cite>
+      </div>
+      <div class="testimonial">
+        <blockquote>"The accreditation was the deciding factor. I couldn't guarantee that my homeschool transcript would get her into the colleges she wanted. With Legacy, that worry is gone."</blockquote>
+        <cite>Parent of a 10th grader, Texas</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2>Common Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is this still homeschooling?</div>
+        <div class="faq-a"><p>Your child learns from home on a flexible schedule. The difference: certified teachers run the instruction, and the program is formally accredited. Many families see it as "homeschool with professional support."</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I enroll mid-year?</div>
+        <div class="faq-a"><p>Yes. Legacy accepts students any time of year. We'll assess where your child is and place them at the right level. No waiting for September.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What about socialization?</div>
+        <div class="faq-a"><p>Students interact in live classes with peers from 30+ countries. There are group projects, discussions, and virtual clubs. Plus, your child still has time for local activities, sports, and co-ops.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How does the MCSF scholarship work?</div>
+        <div class="faq-a"><p>The Maine Children's Scholarship Fund provides up to $900/year for families who qualify by income. Applications are open January through April. Legacy is an eligible school. The scholarship covers roughly 50% of annual tuition.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if my child is ahead or behind grade level?</div>
+        <div class="faq-a"><p>We assess each student individually. If your 5th grader does 7th-grade math, we place them there. If they need support in reading, we meet them where they are. Flexible pacing is one of the main reasons families choose us.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do colleges recognize this diploma?</div>
+        <div class="faq-a"><p>Yes. Legacy is accredited by WASC and Cognia. Our transcripts and diplomas are accepted by universities across the US and internationally. We provide the same documentation as any traditional accredited school.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="talk">
+  <div class="container">
+    <h2>See If Legacy Fits Your Family</h2>
+    <p>15-minute call with an enrollment advisor. Ask anything. No pressure, no sales pitch.</p>
+    <a href="https://legacyonlineschool.com/consultation" class="hero-cta cta-button">Book a Free Call</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Legacy Online School. WASC &amp; Cognia Accredited.</p>
+    <a href="https://legacyonlineschool.com">legacyonlineschool.com</a>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // CTA click tracking
+  document.querySelectorAll('.cta-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof dataLayer !== 'undefined') {
+        dataLayer.push({
+          event: 'cta_click',
+          button_text: btn.textContent.trim()
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
