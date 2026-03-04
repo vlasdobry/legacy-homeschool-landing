@@ -191,8 +191,7 @@
       object-fit: cover;
       object-position: center top;
       display: block;
-      /* Placeholder gradient — replace with real child photo in production */
-      background: linear-gradient(135deg, #3a5a8c 0%, #5c7faa 40%, #8ba4c4 70%, #c4b88a 100%);
+      background: var(--navy-light);
     }
     .hero-photo-badge {
       position: absolute;
@@ -227,18 +226,6 @@
       display: block;
       color: var(--white);
       font-size: 0.85rem;
-    }
-    /* overlay text on placeholder */
-    .hero-photo-img::after {
-      content: 'Photo: child studying at home with laptop';
-      position: absolute;
-      bottom: 50%;
-      left: 50%;
-      transform: translate(-50%, 50%);
-      color: rgba(255,255,255,0.35);
-      font-size: 0.75rem;
-      text-align: center;
-      pointer-events: none;
     }
 
     /* ===== SOCIAL PROOF BAR ===== */
@@ -994,7 +981,7 @@
       </div>
       <!-- Child photo — replace src with real photo in production -->
       <div class="hero-photo">
-        <div class="hero-photo-img" role="img" aria-label="Student studying at home with Legacy Online School on laptop"></div>
+        <img class="hero-photo-img" src="hero-student.jpg" alt="Student studying at home with Legacy Online School on laptop" loading="eager">
         <div class="hero-photo-badge">
           <div class="hero-photo-badge-icon">&#9733;</div>
           <div class="hero-photo-badge-text">
